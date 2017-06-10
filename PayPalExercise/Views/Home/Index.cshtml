@@ -1,0 +1,93 @@
+﻿@model PayPalExercise.Models.Checkout
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="~/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.11.0/js/paypal-checkout.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.11.0/js/client.min.js"></script>
+    <script src="~/Scripts/Checkout.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootbox.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+
+
+
+</head>
+<body>
+    <form  name="checkoutfrm">
+        <input type="hidden" name="ClientToken" id="ClientToken" value=@Html.DisplayFor(model => model.ClientToken)>
+        <div>
+        <table style="float: left;border-collapse: separate;border-spacing: 0 5px;">
+            <tr ><td><h4 style="font-weight:bold">Order Details</h4></td></tr>
+            <tr>
+                <td>Transaction Amount:</td>
+                <td>
+                    <input type="text" name="txnamount" id="txnamount" value=@Html.DisplayFor(model => model.Amount)>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Transaction Currency:
+                </td>
+                <td>
+                    <input type="text" name="txncur" id="txncur" value=@Html.DisplayFor(model => model.Currency) readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Order ID:
+                </td>
+                <td>
+                    <input type="text" name="orderid" id="orderid" value= @Html.DisplayFor(model => model.OrderID)>
+                </td>
+            </tr>
+            <tr>
+                <td>Order Description:</td>
+                <td><input type="text" name="orderdesc" id="orderdesc" value=@Html.DisplayFor(model => model.OrderDescription)></td>
+            </tr>
+        </table>
+        <table style="float: left;margin-left:10%;border-collapse: separate;border-spacing: 0 5px;">
+            <tr><td><h4 style="font-weight:bold">Shipping Details</h4></td></tr>
+            <tr>
+                <td> Adress Line 1:</td>
+                <td><input type="text" name="addressline1" id="addline1" value=@Html.DisplayFor(model => model.AddressLine1) readonly></td>
+            </tr>
+            <tr>
+                <td>Adress Line 2:</td>
+                <td><input type="text" name="addressline2" id="addline2" value=@Html.DisplayFor(model => model.AddressLine2) readonly></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td><input type="text" name="addcity" id="addresscity" value=@Html.DisplayFor(model => model.City) readonly></td>
+            </tr>
+            <tr>
+               <td>Country Code:</td> 
+                <td><input type="text" name="countrycode" id="countrycode" value=@Html.DisplayFor(model => model.Country) readonly></td>
+            </tr>
+            <tr>
+                <td>State :</td>
+                <td><input type="text" name="state" id="state" value=@Html.DisplayFor(model => model.State) readonly></td>
+            </tr>
+            <tr>
+                <td>Postal Code:</td>
+                <td> <input type="text" name="postalcode" id="postalcode" value=@Html.DisplayFor(model => model.PostalCode) readonly></td>
+            </tr>
+            <tr>
+                <td> Phone No:</td>
+                <td><input type="text" name="phone" id="phone" value=@Html.DisplayFor(model => model.Phone) readonly></td>
+            </tr>
+            
+        </table>
+            <p id="message" style="color:red">Still Processing...Please wait...</p>
+        </div>
+        <div  id="paypal-button-container"></div>
+        <p style="font-weight:bold">Personal accounts on  Sandbox environment : AU Account : ariell88@gmail.com/testing123</p> 
+
+    </form>
+</body>

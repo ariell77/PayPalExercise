@@ -1,0 +1,90 @@
+﻿@model PayPalExercise.Models.PaymentSummary
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <div>
+        <h4>PaymentSummary</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TransactionID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TransactionID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OrderID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OrderID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PaymentID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PaymentID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SellerProtectionStatus)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SellerProtectionStatus)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Errors)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Errors)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DebugId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DebugId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PayerId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PayerId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PayerStatus)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PayerStatus)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

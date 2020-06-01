@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     PROJECT: PayPalExercise
-    DOTNET_FRAMEWORK: 4.6.1
+    DOTNET_FRAMEWORK: v4.5.2
 phases:
   build:
     commands:
